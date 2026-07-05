@@ -89,10 +89,8 @@
     <div class="tabs">
       <button class="tab-btn active" onclick="switchTab('main',this)">🏠 메인</button>
       <button class="tab-btn" onclick="switchTab('profile',this)">🎀 프로필</button>
-      <button class="tab-btn" onclick="switchTab('notice',this)">📢 공지</button>
       <button class="tab-btn" onclick="switchTab('schedule',this)">📅 일정</button>
       <button class="tab-btn" onclick="switchTab('work',this)">⚡ 업보</button>
-      <button class="tab-btn" onclick="switchTab('song',this)">🎵 노래</button>
       <button class="tab-btn" onclick="switchTab('dress',this)">👗 옷장</button>
       <button class="tab-btn" onclick="switchTab('inquiry',this)">✉️ 문의</button>
     </div>
@@ -253,24 +251,6 @@
     </div>
   </div>
 
-  <!-- 공지 탭 -->
-  <div class="tab-panel" id="tab-notice">
-    <div class="card">
-      <div class="card-title">공지 추가</div>
-      <div class="form-field"><label class="input-label">제목 *</label><input class="input" id="noti-title"></div>
-      <div class="form-field"><label class="input-label">내용</label><textarea class="input" id="noti-content" rows="4"></textarea></div>
-      <div class="form-field"><label class="input-label">이미지 링크 (여러 개면 줄바꿈으로 붙여넣기)</label><textarea id="noti-image-url" class="input" rows="2" placeholder="https://... (한 줄에 하나씩)"></textarea></div>
-      <div class="form-field full" style="font-size:11px;color:var(--text-soft);margin-top:-4px">💡 SOOP에 <b>비공개 게시판</b>을 만들어 이미지를 올린 뒤 → 이미지 <b>우클릭 → "이미지 주소 복사"</b> → 위 칸에 붙여넣기 (글 주소 말고 <b>이미지 주소</b>)</div>
-      <div class="form-field"><label><input type="checkbox" id="noti-pin"> 📌 고정 공지</label></div>
-      <div style="display:flex;justify-content:flex-end"><button class="btn btn-primary" onclick="addNotice()">+ 추가</button></div>
-    </div>
-    <div class="card">
-      <div class="card-title">등록된 공지</div>
-      <div class="table-wrap"><table><thead><tr><th>제목</th><th>고정</th><th>날짜</th><th>삭제</th></tr></thead>
-      <tbody id="noti-list"><tr><td colspan="4"><div class="spinner"></div></td></tr></tbody></table></div>
-    </div>
-  </div>
-
   <!-- 일정 탭 -->
   <div class="tab-panel" id="tab-schedule">
     <style>
@@ -420,28 +400,6 @@
     </div>
   </div>
 
-  <!-- 노래 탭 -->
-  <div class="tab-panel" id="tab-song">
-    <div class="card">
-      <div class="card-title">곡 추가</div>
-      <div class="form-grid">
-        <div class="form-field"><label class="input-label">장르</label>
-          <select class="input" id="song-genre"><option>K-Pop</option><option>J-Pop</option><option>Pop</option><option>애교송</option><option>기타</option></select>
-        </div>
-        <div class="form-field"><label class="input-label">아티스트</label><input class="input" id="song-artist" placeholder="아티스트명"></div>
-        <div class="form-field"><label class="input-label">제목 *</label><input class="input" id="song-title" placeholder="곡명"></div>
-        <div class="form-field"><label class="input-label">난이도 (1~5)</label><input class="input" id="song-diff" type="number" min="1" max="5" value="3"></div>
-        <div class="form-field full" style="display:flex;justify-content:flex-end"><button class="btn btn-primary" onclick="addSong()">+ 추가</button></div>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-title">노래 목록</div>
-      <input class="input" id="song-search" placeholder="🔍 검색..." style="margin-bottom:12px" oninput="renderSongs()">
-      <div class="table-wrap"><table><thead><tr><th>제목</th><th>아티스트</th><th>장르</th><th>난이도</th><th>삭제</th></tr></thead>
-      <tbody id="song-list"><tr><td colspan="5"><div class="spinner"></div></td></tr></tbody></table></div>
-    </div>
-  </div>
-
   <!-- 옷장 탭 -->
   <div class="tab-panel" id="tab-dress">
     <div class="card">
@@ -490,7 +448,7 @@
       document.getElementById('adminBody').style.display = 'flex';
       checkDb();
       loadProfileFields(); loadMain(); loadContents();
-      loadNotice(); loadSchedule(); loadWork(); loadSong(); loadDress(); loadInquiry(); loadOriginalSongs();
+      loadSchedule(); loadWork(); loadDress(); loadInquiry(); loadOriginalSongs();
     } else {
       document.getElementById('loginErr').textContent = '비밀번호가 틀렸어요 >﹏<';
     }
