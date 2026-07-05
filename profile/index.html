@@ -90,6 +90,11 @@
   .links a{padding:11px 22px;border:1.5px solid var(--main);border-radius:10px;text-decoration:none;font-size:13px;font-weight:800;color:var(--main-dark);background:var(--card)}
   .links a:hover{background:var(--main);color:#593f00}
   .kbear{display:inline-block;width:1.35em;height:1.35em;vertical-align:-0.32em;margin:0 1px;background:#fff url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAwFBMVEX///////7+/////v/+/v/+/v7+/v39/f78/P37+/z5+fr59/z29vj19Pj18/jy8/Ty8Pbv7/Pv7fTu7fPt7PLt6/Ps6vLs6/Ds6fLr6vDr6fDu5/fq6PDp5+/p5u/o5u7o5PDm5uvn5O7l5Orl4+vm4u3k4evj4ufj4Onj3ezg3+Tf3eTf3OXe2uTe2Ofc2OLc1eXY19zW09vZ0eTX0ODXzePQ0NTQy9fTx+LMxtXMwdrDvcy7scOZipZuV2ZOM0K1OKh4AAAEm0lEQVR42qWWi3KiShCGySoBAWEAuYSACAqDoCCoiHLx/d/q9IzoZrNna6vO+YuQynR/fZlLBob5r/rBTv9gYammzP8T+3vIMezbn4i5okiCMPvdMlECy7JURfhllFfWOLCA4RiG42cggbx4juXVoi7LIg3U2dvPetigzFL8oSqKIghqgFMMTxAEH4pk1XWZgRHCvdKzUlCWZQ0q8Rpcs6LIiA/Ga9/CMFrVdbWG9DN27Pejrsq67bqurYAsMhyEvuN8fDiu769xSmxt5UmS9ASCuqqubdteodos2fiOaZq6ri8M07JM1wlKCNbWC0l5Amuo5noFdwgeuraxAG9N03T6yzDMTUFyYFUV2BG4kgZq6m7aEN6gDIEAME3bSeu2LXGgcA8AE6Aq0s3SdWxSj7Eg0jUVIaRquml7uIb+UpUfgRb8Mwz+rut8BRCSZUB0x3Z3MC/lM0NA5hqHS+8JQE0gXQX/uTSXkWa7IQZAGPeQhMsiXvsj4JAuiBYamkuwX8Q50m0vKUrMj8C7kmabcLn0gHBcz/0JAAGAJCPd2WRYfWceu3y2wEnkEwAIWzecJ4HIfoR9RXJ4CV5wBIBH3sBqgUgKz9EMUheRpUqiwE6n05kkq2aQ4RkpacpMdOiYAktvaSRthQyP+LvIq0udbDl2JiHNyzKFoztW8FIcUsJ33aTrO6T5BPDFou/rOYk6EebITLJAILPK63EShyFBNrbWDvfeN0gz3mZa3++dyrwTQJI1P80UAsz8NIkeQGSg7n4fStsLl364Ya73e28xUNSEgxRWWqoUCLKYAiEFIMPOhMkynYi7AOBPyTFkoIsFLi2WlIT3cRQ9ENu+9Pde1kLbNMxoVg1D54iywDG8IMrqugjmcIQlvHsB/jK+di3SkrK6VpZYdN3eRPJcAH8RmsiwRVYtocBI+Db6CNZtD6oDDybTXZD1FkXSdZYGdFJTCoxI6Klq1Q/3YehrCXme7xkaJJnPEZkmTIFdHD8BP04sJPn9HdStRdn0/NAzF/RgLABIfwEIE69EfjKFuboPCUMLj0LfteD06dY6o4CVZjEoIj/JLlpt0URU2qE/yRMxj+RVEhPEMW033pOSODnZJTFVEm+LVd71LWLEoZcZBNtEXO0SMAPjh2kJTcPC4X2yHZWfVk0PS62296FTyDYR3QO1AJTsK6wQYL3fEeV5vstP+a2H+elJDx203qPo8DBt811ZWWTReT3Z508dL01Dp2igT3/a5oenrShLhf4nE/ziNXi4Np/dMNAk8Dp8Hl+m/FSuJXrifqj7Ij+MOl2ac3O7NUd4N8ft9vg05EVVSCw9cTCzhxMZOxJdbufPlw5nOkb8j5fKGa8qlnlPTueHCQJfIH7TnM/wnE/HUefT6RK/LqE3OERQAGHACQq6jQxBaCAYuzizr1eisMybl1tzuTz94Q8Yb9smd/hvt+gsvr3UjHoNXJbk8vt2Xc5EFEFuuAnaGwlKBBfJ7XJcIYn/95ta0Oxomx9fkZvjYRfaiP/tKn8g3DjGaWG0okcJcd9MfxDHj/r7Bwb5XuAmXz4DIDbL/hWbfvnW+K5/AH1N5w3gtZX0AAAAAElFTkSuQmCC') center/contain no-repeat;border-radius:5px}
+  .daycards{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:12px}
+  @media(max-width:560px){.daycards{grid-template-columns:repeat(4,1fr)}}
+  .dc{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:1.5px solid var(--main-light);border-radius:12px;padding:9px 4px;min-height:52px;background:var(--cream)}
+  .dc .dd{font-weight:800;font-size:15px;color:var(--main-dark)}
+  .dc .tt{font-size:11px;font-weight:700;color:var(--main-dark)}
 </style>
 </head>
 <body>
@@ -136,6 +141,8 @@
 
     <!-- 능력치 -->
     <section class="sec" id="sec-stats"><div class="seclabel"><b>능력치</b><span class="ln"></span></div><div class="stats" id="stats"></div></section>
+
+    <section class="sec" id="sec-week"><div class="seclabel"><b>이번 주 일정</b><span class="ln"></span></div><div class="daycards day7prof"></div></section>
 
     <!-- 어록 -->
     <section class="sec" id="sec-contents"><div class="seclabel"><b>진행한 컨텐츠</b><span class="ln"></span></div><div id="contents"></div><div class="cpg" id="contents-pg"></div></section>
@@ -218,6 +225,10 @@ function render(d){
     const v=Math.max(0,Math.min(100,+s.value||0));
     return `<div class="stat"><div class="sl">${esc(s.label)}<em>${v}</em></div><div class="bar"><i style="width:${v}%"></i></div></div>`;
   }).join('');});
+  // 이번 주 일정 (메인과 같은 data.main.week 소스 → admin 메인탭에서 편집)
+  sec('sec-week', true, ()=>{ const wk=(d.main&&d.main.week)||[]; const dn=['일','월','화','수','목','금','토'];
+    document.querySelector('.day7prof').innerHTML = dn.map((n,i)=>`<div class="dc"><div class="dd">${n}</div><div class="tt">${esc(wk[i]||'')}</div></div>`).join('');
+  });
   // 어록
   const cts=(d.contents||[]).filter(c=>c&&c.title); sec('sec-contents', cts.length, ()=>renderContents(cts));
   // 이벤트

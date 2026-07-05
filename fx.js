@@ -16,8 +16,9 @@
    ============================================================ */
 
 /* ─────────── 설정 (이 사람에 맞게 바꾸세요) ─────────── */
-var FX_FLOAT = ['🌙','✦','🐻','🌙','✧'];   // 떠다니는 입자 모양 (히린: 하얀곰·초승달)
-var FX_CLICK = '🌙';                          // 클릭하면 터지는 모양
+var BEAR = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAANYElEQVR42s1ZW49kR1L+IiLznFNVXd3V1ff2eG7GxuML9mJY27IFu14JBGhhEfCEBBLwxh/YR/8LXnlAYiUWVgJxFTZjwLCydiUjy+tde8aenZ5LX2b6VpdzycwIHk71TI896132iSPlw6msyvwyMuKLL6LIzL6O/8eP+5w5SikRAIiIfWrOfsr97q356We2h/1YgCklEhEASCKSTn4/+7EB4Nk7UkqYffdHPimlEwAAoCISf8QBZTbo9Lx7yEkUQFKgH+p6MUZl72XCzADARDQWkQkAPtl0tiA9xMokInzqvdM0cW0yGXVIhBgAs4CIo8/9OHPu4NNruYctGmMcHI1Gj9dVfcnMuOgUW7n3ocUkN7IMWyLiACDG6E5Z+N7CswOl2QAzh7oOZ/bu3Hnu6PBw2WcZM7MyiRRFPi56xYdzvc73heR4dt30MICpaZql29u7v9w09Rozc5blEmM8z8w3vXCVYtwoU1xxTqyclphOqs0mhHkii8RCqslEHJw4gdmxz92tLMuQ55neuHFr4+DwYK3f77NzDmYQduxYiEytCHV4Ah5XAOzPLG8nAAlAmE6nGzs7uy/VTTjDLDIeTfx4vNNTpWWzuLy4uLg/3+8HVRUzNTNmYvSI2BMJCByY+TaRNCAWhoXQoKsaqCrjGiBL3U5PzEyPjg+tKkOfiWhxuLC3sbGeiKiTkj7GzB7AHgBypwJDy7KcH4/HZ8V5xKhhOq3m6rrpNk0w7x2apkllXQchcmYcnXd3s8wdiQiEhYg4MvNdGEUwCGqUTNnMyMzKuc78nV63H6qm9FVZr0zG415MiWIKG6oqZzY3r4uTfgih55y7CSD/9BXHGLUGWxZDQ8yoi6JT9npzTX+ue+yz3JyTOpOidt4HEb7NIgEAmwIkABkYhKz1cDFWAthgRnctAcKkmcsyVhaAeqPxaKGuwsruzt7CoD8oe/3uLgi5qg7MrHQPUoJSSmCOBmEx712ZZVJ3Oz04FuR5kTKf3WXmuwATAaYp+ZZ5ABgZneZJ1VnUUAvcATEFIZD2enO3im4H+wd7tLe3NwdYPJ5O1qNp3e3mWUqJvPc/cLN1IAIQAWoNAEEIgcQJet1eyn0O5wpz4raZeZ+gBmqjlsAtGG6h6KkDMwMghoDuhyOxmSk0maLB7cFgCSJu9WD/joWmthK6IYyjXrd7AwCftiCZGaVopE6pyArN81zyojN27PdEnBHR1KCqALd3yqfIzwB7kArpZBDAQu2XDIAyIhI5RwGU3Z7vLTRkvBKtptFomnuX7+V5fj2l1EZxS1mgXq9XLi0t3Q0hLHXygvO8ALMEYXeoZsakYiAh0Gczgc5A8unPaJYfCGCAwJIRsZoZEqWEJCFoTcRlp9OVaaWWZcpZ5sYAjgDkfDrX9nq9cmNj5U6304vsPDELGEJm5tqtCKfBaUqfm5RP5swMICZimjLLNjPvOydgERYhcUKRmY4du7Q4WBj3+70agBORB4jaVJVTsMI5YSiBISBiGMwAmCmIZi4HEnOeoCmR0X2z0SknVDEQAOecisDBaJfZrpKhD+LHPTAgMw6EiTd/W7N0lg1jInc8uxM5fSFW16FfTqsNgL14ryBCMiWDEdq9YApYMlJNTGAhEsDSbEJhp0fUE4sLrL18ZRAJVQz6kMgOXSacOaciZOIEZV2vlJNyOFM+YACUkAzARorpYhNCQUQgA5maAdYz2KaaeVVATc37LB8fHl946803ntvd2R705udjTHraeEhJyeW5ltOy8/blt5764L3vPVlX1ZwXMUDIeymzzF9h5j3xkot3QZhvE7gOKZxtYnPmXngIROu66ZVlPU8gbfUJg8iUiTwTz4FbH+gWXTs42O/+25tvnP37b/315sdXr2yIcE9TMrP7YZySotstbDwaub/6i79cf+vNNx69e3fvIoCVGIOmlMSMx977a0S0K0Ip89lx5tw0hrgxOhqfk5niAQBUVfRVVRcs7gHlZAptg5PmkgXXnSvi7s6O+8/L/1689513dX9nb3Mymq4RkZoaVA1JDUkTMgfUVWXv/ve78d1vf5f3tnfXAJwjs0VVNQDODMcA3SYWiIjz3nMMaa4smy6AeAJQQ1MPTW0FRCTMRgSYEbVBaB5mmzBaTIpMmLOOL2i+WGRmx8kSzXjSmMmciDGxhQQjdlgerrJHB3UZIoA5TXicjBZEkgEJzMw8I3p2rjFDSCE5AF2+F3xJWVX5hEROHP0eBxtYWFbL8fTx5dW11Rdfedk2z53V4XD5w+FyfyvG4JhYABaAWuUQwd55bJ4/k55+4XmsbzyCqkwwTYWqPREjLaqqQpUIICKYiGyz8C4RlsaT8hk3E6iPQm0d4NSa7v4tz7il5WBh3zRN1u127dXXvrT/5NPPyMrGcj4eVevJYuf2ta2FqpzyeDrG2XPnR4vLC2Wn4+mP/vRPfrAwXF7vLyzGalqaOCaodTTpeTJaA1AYjMAAEzWeXZMo5dNymrcAm7hgZnOnk8ID/AMFgQGFGakSSBeWhtXG2c2jqpqm8eh4/cMP3l9/+/KbLoQAgmLrwsXVspzevfDYY9e++OqL26PJtKzLkEJISRUAElFKC0wyIIYaaYICZiZggiYrQtUsz8SCxqRtuUV2csd0P1bsfilDxFBVriaTFJtyp9vtlP3+PO9u7y5c/uc3+poMjhn1y7F55vlfuFMUxe5oNNayKg9hUhhoGYZoZhPnqDZRgjEBIFWDajIAyVQ7KWLjJJMwDAy7j0VnL4wW6Ik/EghmQCaeBwuDDjM06/LWzzxxKVw8f+nZneu3O+QEz/7ci5+89MoXP2pKlW6RzTnJ62lVLqQYNxNSqTHdVOPGmVOiFGdCwtTgNalvY1NNXn/99V+KSRfrstmISTssYq2/3jfeSdkGAkITyZTMi5fRweFcXnQbZm7W1tbrJy5dGl2/em341d/97eo3fuc3b+XOHcXa5n/40SfPOid1VuQ6nZQDIqKUrA/CUNVMTUtT5ZiUk9pGCGFopnBezAGw3OdbxLxpwNDU7seI3RNisNYL0dQNik7PJtMy+9dv/s1wMr6z/MqvfOXqL375lU+efuFn/Xh/J1mcdvrDwk1G5fw/ffNbz3z7jf8Yfu0P/vCTl77yku7v7hszkRlyawwwXRamHsSoFaSpqyl4MB0XRXHgABg7HEkmY1TgFDUxU5taTxE2QVsvSIYU1CbHUzvYOyw+eP8d113MLyxvrHUu/90/dm9/cjN/+1/+wW9eXDsTk66++bffWNq6soNq8nsDi6g1qmk0AFAzGGCZMYq2ODXAUmyaQHkn218YDN498UGX51mqfV3VZRQyBxihza4EGLVQqZXe4/EkC1Hzl157bXrt2tXuO5e/u/jRu1cWP/7eVaxuXMD1K9fxjT/785W8U2D7xq6+9tWvVZvnz83f3RvVRmKaWgGuBiKCYpatzBKSqYIoy7yrs8xt3WOTubnOdrfXuUFmlJKSWuuxpgozg1qbxojEQoiZEXqXXvj56qmnX62qQx9vb91tHjn3ZHjlV38tXHruy2HvVhV2bh7H51/89fq3fv+Pj4Yrq9XB4QFI2E7Ws3ZNUlVSa0cIQbIsK3u93gSAIzP7OhIIAi2n9eO724dfik2TmYm2qa7lQNMTdiTE0FBdVQWR73ez/oQMVRMCOxH4PEdKCU1Tw7HA5958LrHRKVKKJ20dgE/WmxVWxDBEiyHwwtLce5uPrL6TUmrcrG1jALTTza8tDLr/tXurelmTdpy4BsSkCXw/ngFmVmEXq7pxWRb6g4WVNPRuqgFoGoUrGLwAMgFimNB4eoykkZjZWgKzmS5XEJMxQ2OMNJlMaLjSP1haXbgFYCQiD9TFDkA1GPY/iE1yB3fGX5iMm00Cgs/dsROGEZHNiNx5F3PgcDw+GoxH46Gw65IKRDwIRiArIVqSqDlHBiIzMyOiWeo0AtApJ6ETQ1Cf02Qw7N9ZXl18P/f5dkop/4zkTwleBLq8PvifpGDVkTRlHJaTamBKECcqjo2IwAxzTpSpE2MKLqZaSByYFSZGwkSOWY2ETK0DGEVVUgNMFbFOopoGwhzJ083OXP7DRy+s3XTeXZlZz7eV9kM6rKd6hKu7Nw+/sHV17+nQxK5zIiwsADExM2MWhkRjITo2EBn0XsnZ1jnwqmmRCS4mNTNLMSazaI1qisvr8x9feGr9O3meXz/phJ2uuehzWsAGQFQ1b+o40GBP7O+PLk4Op92qjPlkXC/GKrQoRZRarz9pJMBMzdpQ5RiTkBDlXT/q94tRp1uEwdLcVqfrv58VftdlrgYQTpXTP1kLGEBi5lHRyUboYOQKutIMOy40Jk3VZDEaxyaeKafNY5psvkVrICJTU4bZ2Gd+r9vLEgtfF097WeEtz3zq9PIxgIMZMPeQBuiPBXgC0qeQAMZxlmUHWZbZKVVGAG5Mx9VWCKlH4FaaMZupMguVnW5x4BwrgB0Ak1N7ckoQIOUA7CF98J8IIACYeAEASSm50w0YBeC9HHXnioPPOSCllEwVwozeidgUEWvdXPSn7fJ/FujJKeV+1xsJDHlA334q4NoGusisCS//t78F/hfzwNMcYjglwAAAAABJRU5ErkJggg==';  // 히린 하얀곰 파티클 이미지
+var FX_FLOAT = [BEAR,'🌙',BEAR,'✦',BEAR];   // 떠다니는 입자 (하얀곰 위주 + 초승달·반짝)
+var FX_CLICK = BEAR;                          // 클릭/프사톡 = 하얀곰
 var FX_COUNT = 16;                            // 떠다니는 입자 개수 (많을수록 무거움)
 var FX_TILT  = true;                          // 카드 마우스오버 살짝 기울기 (끄려면 false)
 
@@ -143,10 +144,17 @@ var FX_TRANS_MS    = 800;    // 커지는 등장 길이(ms). 더 느리게 = 숫
       if (!fx.childElementCount) {
         for (var i = 0; i < FX_COUNT; i++) {
           var p = document.createElement('span'); p.className = 'fx-p';
-          p.textContent = FX_FLOAT[(Math.random() * FX_FLOAT.length) | 0];
+          var _sh = FX_FLOAT[(Math.random() * FX_FLOAT.length) | 0];
           var dur = 13 + Math.random() * 11;
           p.style.left = (Math.random() * 100).toFixed(2) + 'vw';
-          p.style.fontSize = (9 + Math.random() * 7).toFixed(1) + 'px';
+          if (/^data:|^https?:\/\//.test(_sh)) {
+            var _z = (13 + Math.random() * 10).toFixed(1);
+            p.style.width = _z + 'px'; p.style.height = _z + 'px';
+            p.style.backgroundImage = 'url("' + _sh + '")'; p.style.backgroundSize = 'contain'; p.style.backgroundRepeat = 'no-repeat'; p.style.backgroundPosition = 'center';
+          } else {
+            p.textContent = _sh;
+            p.style.fontSize = (9 + Math.random() * 7).toFixed(1) + 'px';
+          }
           p.style.animationDuration = dur.toFixed(1) + 's';
           p.style.animationDelay = (-Math.random() * dur).toFixed(1) + 's';
           p.style.setProperty('--drift', (Math.random() * 60 - 30).toFixed(0) + 'px');
@@ -180,9 +188,16 @@ var FX_TRANS_MS    = 800;    // 커지는 등장 길이(ms). 더 느리게 = 숫
   window.fxHearts = function (x, y, n) {
     if (mqReduce) return;
     for (var i = 0; i < n; i++) {
-      var h = document.createElement('span'); h.className = 'fx-heart'; h.textContent = FX_CLICK;
+      var h = document.createElement('span'); h.className = 'fx-heart';
       h.style.left = x + 'px'; h.style.top = y + 'px';
-      h.style.fontSize = (12 + Math.random() * 8).toFixed(0) + 'px';
+      if (/^data:|^https?:\/\//.test(FX_CLICK)) {
+        var _hz = (16 + Math.random() * 10).toFixed(0);
+        h.style.width = _hz + 'px'; h.style.height = _hz + 'px';
+        h.style.backgroundImage = 'url("' + FX_CLICK + '")'; h.style.backgroundSize = 'contain'; h.style.backgroundRepeat = 'no-repeat'; h.style.backgroundPosition = 'center';
+      } else {
+        h.textContent = FX_CLICK;
+        h.style.fontSize = (12 + Math.random() * 8).toFixed(0) + 'px';
+      }
       h.style.setProperty('--hx', (Math.random() * 64 - 32).toFixed(0) + 'px');
       h.style.animationDelay = (Math.random() * 0.12).toFixed(2) + 's';
       document.body.appendChild(h);
