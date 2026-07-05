@@ -69,7 +69,9 @@ var FX_TRANS_MS    = 800;    // 커지는 등장 길이(ms). 더 느리게 = 숫
     @keyframes fxDot{ 0%,100%{ opacity:.3; transform:translateY(0); } 40%{ opacity:1; transform:translateY(-7px); } }
     .fx-enter{ animation:fxPop var(--fx-trans,.8s) cubic-bezier(.2,.72,.3,1) both; transform-origin:50% 0; }
     @keyframes fxPop{ from{ opacity:0; transform:scale(.93); } to{ opacity:1; transform:scale(1); } }
-    @media (prefers-reduced-motion: reduce){ #fxload .fxload-av, #fxload .fxload-dots i{ animation:none !important; } .fx-enter{ animation:none !important; } }
+    .fx-tap{ animation:fxTap .5s cubic-bezier(.34,1.56,.64,1); }
+    @keyframes fxTap{ 0%{ transform:scale(1); } 25%{ transform:scale(.86); } 55%{ transform:scale(1.12); } 100%{ transform:scale(1); } }
+    @media (prefers-reduced-motion: reduce){ #fxload .fxload-av, #fxload .fxload-dots i{ animation:none !important; } .fx-enter{ animation:none !important; } .fx-tap{ animation:none !important; } }
   `;
   var st = document.createElement('style'); st.id = 'fx-style'; st.textContent = css; document.head.appendChild(st);
 
@@ -170,7 +172,7 @@ var FX_TRANS_MS    = 800;    // 커지는 등장 길이(ms). 더 느리게 = 숫
     var av = document.querySelector('.avatar-wrap, #avatarWrap, .avatar');
     if (av && !av.dataset.fxPop) {
       av.dataset.fxPop = '1'; av.style.cursor = 'pointer';
-      av.addEventListener('click', function (e) { window.fxHearts(e.clientX, e.clientY, 10); });
+      av.addEventListener('click', function (e) { window.fxHearts(e.clientX, e.clientY, 10); av.classList.remove('fx-tap'); void av.offsetWidth; av.classList.add('fx-tap'); });
     }
   }
 

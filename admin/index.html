@@ -440,7 +440,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="../supabase.js"></script>
 <script>
-  const ADMIN_PASSWORD = '1234';
+  const ADMIN_PASSWORD = '{{관리자비밀번호}}';
 
   function tryLogin() {
     if (document.getElementById('pwInput').value === ADMIN_PASSWORD) {
@@ -497,6 +497,7 @@
   // ── 프로필 (프로필 페이지 모델과 동일 키) ──
   const PSAVE = ['name','name_en','soop_id','avatar','tagline','intro','birthday','debut','agency','mbti','age','fan_name'];
   const v  = id => (document.getElementById(id)?.value || '').trim();
+  const esc = s => (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   const lns = id => (document.getElementById(id)?.value || '').split('\n').map(s=>s.trim()).filter(Boolean);
   async function fetchProfile(){ try{ const {data:rows}=await db.from('profile').select('data').eq('id',1); if(rows&&rows[0]&&rows[0].data) return rows[0].data; }catch(e){} return {}; }
   // ── 진행한 컨텐츠 (profile.data.contents 배열로 관리) ──
