@@ -22,14 +22,12 @@
   .cal-cell.has{cursor:pointer}
   .cal-cell.has:hover{background:var(--main-light)}
   .cal-cell.today{background:var(--main-light)}
-  .cal-cell.today .cal-date{background:var(--main-dark);color:#fff;border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center}
-  body.dark .cal-cell.today .cal-date{color:#2a2000}
+  .cal-cell.today .cal-date{background:var(--accent);color:var(--on-accent);border-radius:50%;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center}
   .cal-cell.hl{box-shadow:inset 0 0 0 2px var(--main)}
   .cal-date{font-size:13px;font-weight:700;color:var(--text-mid);padding:1px 3px}
   .cal-cell:nth-child(7n+1) .cal-date{color:#e05}
   .cal-cell:nth-child(7n) .cal-date{color:#3a9}
-  .cal-cell.today .cal-date{color:#fff}
-  body.dark .cal-cell.today .cal-date{color:#2a2000}
+  .cal-cell.today .cal-date{color:var(--on-accent)}
   .ev{font-size:10px;padding:3px 6px;border-radius:6px;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600;max-width:100%}
   .c-green{background:#d6f0e4;color:#1f7a52}.c-pink{background:#ffe0eb;color:#d95f7f}
   .c-yellow{background:#fff0cc;color:#b07d18}.c-orange{background:#ffe0cc;color:#c2611f}
@@ -82,7 +80,6 @@
 
   <div class="kicker"><span class="cat">SCHEDULE</span><span class="date dbox"></span></div>
   <h1 class="headline">방송 일정</h1>
-  <div class="byline">오후 12시에 만나요 — 히린의 이번 달 일정이에요 🐻</div>
 
   <div class="calendar">
     <div class="cal-header">

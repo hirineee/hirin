@@ -242,7 +242,7 @@ function render(d){
        <div class="gbar"><i style="width:${pct}%">${pct}%</i></div>${g.next?`<div class="gnext">다음 목표 — ${esc(g.next)}</div>`:''}`;
   });
   // 링크
-  const L=d.links||{}; const linkDefs=[['soop','SOOP',L.soop],['youtube','YouTube',L.youtube],['x','X',L.x]];
+  const L=d.links||{}; const linkDefs=[['soop','SOOP',L.soop],['youtube','YouTube',L.youtube],['x','RePlay',L.x]];
   const links=linkDefs.filter(x=>x[2]);
   sec('sec-links', links.length, ()=>{document.getElementById('links').innerHTML=links.map(x=>`<a href="${esc(x[2])}" target="_blank" rel="noreferrer">${x[1]}</a>`).join('');});
 }

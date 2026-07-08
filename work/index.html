@@ -93,7 +93,7 @@
       fetchAll('upbo_counts', { order:'id', asc:true })
     ]);
     let latest = counts.reduce((m,c)=> c.updated_at && c.updated_at>m ? c.updated_at : m, '');
-    document.getElementById('update-date').textContent = latest ? '갱신일: ' + latest.slice(0,10) : '';
+    if(latest){ const _d=new Date(latest); const _p=n=>String(n).padStart(2,'0'); document.getElementById('update-date').textContent='갱신일: '+_d.getFullYear()+'.'+_p(_d.getMonth()+1)+'.'+_p(_d.getDate())+' '+_p(_d.getHours())+':'+_p(_d.getMinutes()); } else { document.getElementById('update-date').textContent=''; }
     render(viewers);
     if (typeof enableIframeAutoHeight==='function') enableIframeAutoHeight();
   }
