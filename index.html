@@ -55,7 +55,7 @@ body.dark .tsw{background:#2a2416}body.dark .tsw .kn{top:14px;background:#201d12
 .headline{font-family:var(--pen);font-weight:800;font-size:32px;line-height:1.3;color:var(--hdg);margin-top:14px;letter-spacing:-1px}
 .headline em{font-style:normal;color:var(--accent)}
 .byline{font-size:12px;letter-spacing:1px;font-weight:700;color:var(--text-soft);margin-top:14px}
-.byline b{color:var(--main-dark)}
+.byline b{color:var(--accent)}
 .hero{margin-top:20px;position:relative;border-radius:3px;overflow:hidden;border:1px solid var(--rule);background:linear-gradient(135deg,var(--main-light),var(--cream))}
 .hero img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center 28%}
 /* 카메라 촬영 화면 오버레이 - 미니멀 (메인 히어로 사진) */
@@ -100,7 +100,7 @@ body.dark .tsw{background:#2a2416}body.dark .tsw .kn{top:14px;background:#201d12
 .daycards{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
 @media(max-width:560px){.daycards{grid-template-columns:repeat(4,1fr)}}
 .dc{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:1.5px solid var(--main-light);border-radius:12px;padding:9px 4px;min-height:52px;background:var(--cream)}
-.dc .dd{font-weight:800;font-size:15px;color:var(--main-dark)}.dc .tt{font-size:11px;font-weight:700;color:var(--main-dark)}
+.dc .dd{font-weight:800;font-size:15px;color:var(--hdg)}.dc .tt{font-size:11px;font-weight:700;color:var(--hdg)}
 .schednote{margin-top:11px;font-family:var(--serif);font-size:14px;color:var(--text)}
 
 .lk{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -116,20 +116,20 @@ body.dark .pill.no{background:#3a2222;color:#e79a94}
 /* ── 사이드바 ── */
 .side{display:flex;flex-direction:column;gap:22px;position:sticky;top:14px;align-self:start}
 .pbox{background:var(--card);border:1.5px solid var(--main);border-radius:4px;padding:22px 20px 20px;text-align:center}
-.pbox .lab{font-family:var(--script);font-size:32px;color:var(--main-dark);line-height:1.05;padding-top:4px}
+.pbox .lab{font-family:var(--script);font-size:32px;color:var(--accent);line-height:1.05;padding-top:4px}
 .pbox .avw{width:128px;height:128px;margin:20px auto 0;border-radius:50%;overflow:hidden;border:4px solid #fff;box-shadow:0 0 0 4px var(--main),0 8px 20px rgba(196,150,44,.22)}
 body.dark .pbox .avw{border-color:var(--card)}
 .pbox .avw img{width:100%;height:100%;object-fit:cover}
-.pbox .nm{font-family:var(--pen);font-weight:800;font-size:27px;color:var(--ink);margin-top:14px;line-height:1}
+.pbox .nm{font-family:var(--pen);font-weight:800;font-size:27px;color:var(--hdg);margin-top:14px;line-height:1}
 .pbox .en{font-size:10px;letter-spacing:4px;font-weight:700;color:var(--text-soft);margin-top:4px}
 .pbox .tbl{margin-top:16px;text-align:left;border-top:1px solid var(--main);padding-top:4px}
 .pbox .tbl div{display:flex;justify-content:space-between;padding:9px 2px;border-bottom:1px dashed var(--main-light);font-size:13px}
-.pbox .tbl span{color:var(--text-soft);font-weight:700}.pbox .tbl b{color:var(--main-dark)}
+.pbox .tbl span{color:var(--text-soft);font-weight:700}.pbox .tbl b{color:var(--hdg)}
 .pbox .ddtag{font-size:10px;background:var(--main);color:#593f00;border-radius:6px;padding:1px 5px;margin-right:6px;font-weight:800}
 .pbox .links{display:flex;gap:6px;justify-content:center;margin-top:14px}
-.pbox .links a{flex:1;padding:8px 0;border:1.5px solid var(--main);border-radius:8px;text-decoration:none;font-size:12px;font-weight:800;color:var(--main-dark);background:var(--card)}
+.pbox .links a{flex:1;padding:8px 0;border:1.5px solid var(--main);border-radius:8px;text-decoration:none;font-size:12px;font-weight:800;color:var(--hdg);background:var(--card)}
 .pbox .links a:hover{background:var(--main);color:#593f00}
-.pbox .inq{display:block;width:100%;margin-top:9px;background:var(--cream);color:var(--main-dark);border:1.5px solid var(--main-light);border-radius:8px;padding:11px;font-size:13px;font-weight:800;cursor:pointer}
+.pbox .inq{display:block;width:100%;margin-top:9px;background:var(--cream);color:var(--hdg);border:1.5px solid var(--main-light);border-radius:8px;padding:11px;font-size:13px;font-weight:800;cursor:pointer}
 
 .qcard{position:relative;border-radius:4px;overflow:hidden;border:1px solid var(--rule);min-height:150px;display:flex;align-items:flex-end;background:linear-gradient(135deg,var(--main),var(--main-dark))}
 .qcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 25%}

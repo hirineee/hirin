@@ -14,8 +14,8 @@
   .cal-nav{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--rule);background:var(--card);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--text-mid);transition:all .2s}
   .cal-nav:hover{background:var(--main-light)}
   .cal-grid{display:grid;grid-template-columns:repeat(7,1fr)}
-  .cal-dow{padding:10px 4px;text-align:center;font-size:13px;font-weight:700;color:var(--main-dark)}
-  .cal-dow:first-child{color:#e05}.cal-dow:last-child{color:#3a9}
+  .cal-dow{padding:10px 4px;text-align:center;font-size:13px;font-weight:700;color:var(--text-mid)}
+  .cal-dow:first-child{color:#e05}.cal-dow:nth-child(7){color:#3a9}
   .cal-cell{height:86px;border-top:1px solid var(--rule);border-right:1px solid var(--rule);padding:5px 5px 6px;position:relative;overflow:hidden;cursor:default}
   .cal-cell:nth-child(7n){border-right:none}
   .cal-cell.other{opacity:.32}
@@ -108,7 +108,7 @@
   const DAYS = ['일','월','화','수','목','금','토'];
   function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
   function kind(t){ return t === '휴방' ? 'off' : 'on'; }
-  function colorClass(s){ return 'c-' + (s.color || (kind(s.type)==='off'?'pink':'green')); }
+  function colorClass(s){ return 'c-' + (s.color || (kind(s.type)==='off'?'pink':'yellow')); }
   function colorClass2(s){ return 'c-' + (s.color2 || s.color || 'blue'); }
   async function init() {
     const now = new Date(); currentYear = now.getFullYear(); currentMonth = now.getMonth();
@@ -165,7 +165,7 @@
       const label = k==='off' ? '휴방' : '방송';
       const p1 = (s.time?s.time+' ':'') + (s.title||label);
       const p2 = (s.title2||s.time2) ? ((s.time2?s.time2+' ':'') + (s.title2||'2부')) : '';
-      return `<div class="up-item ${colorClass(s)}" style="border-left-color:currentColor" onclick="openModal('${s.date}')">
+      return `<div class="up-item ${colorClass(s)}" onclick="openModal('${s.date}')">
         <div class="up-date"><div class="up-d1">${String(dd.getMonth()+1).padStart(2,'0')}-${String(dd.getDate()).padStart(2,'0')} (${DAYS[dd.getDay()]})</div></div>
         <div class="up-info"><div class="up-title">${esc(s.title || label)}</div><div class="up-time">${esc(p1)}${p2?'  ·  '+esc(p2):''}</div></div>
         <span class="up-badge ${colorClass(s)}">${label}</span>
